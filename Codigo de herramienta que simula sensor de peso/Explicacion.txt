@@ -1,0 +1,3 @@
+Se usa esta aplicación debido a que no se pudo simular en ningun simulador IOT un
+sensor de peso, incluso se intentó hacerlo en Proteus, pero todo fue inutil.
+Lo unico que se nos ocurrio es hacer POST hacia la base de datos.
