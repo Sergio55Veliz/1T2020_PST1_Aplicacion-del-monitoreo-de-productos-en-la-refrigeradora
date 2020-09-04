@@ -36,8 +36,8 @@
             $_SESSION['contraseña'] = $pass;
             $_SESSION['correo'] = $correo;
             $_SESSION['user'] = $user;
-            //header("Location: /datos-usuario.php");
-            header("Location: /pruebaFechas.php");
+            header("Location: /datos-usuario.php");
+            //header("Location: /pruebaFechas.php");
         }else{
             
             $mensaje="Usuario o clave incorrecta";

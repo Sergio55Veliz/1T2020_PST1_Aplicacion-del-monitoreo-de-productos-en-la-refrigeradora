@@ -1,30 +1,12 @@
 <?php
 
-  
+  session_start();
 
-  if (isset($_SESSION['user_id'])) {
-    header('Location: /php-login');
+  if (isset($_SESSION['user'])) {
+    header('Location: /datos-usuario.php');
   }
   
-  require 'conexion.php';
-
-  if (!empty($_POST['usuario']) && !empty($_POST['contraseña'])) {
-    $records = $conn->prepare('SELECT * FROM Usuario'
-    .' WHERE usuario = :usuario');
-    $records->bindParam(':usuario', $_POST['usuario']);
-    $records->execute();
-    $results = $records->fetch(PDO::FETCH_ASSOC);
-
-    $message = '';
-
-    if (count($results) > 0 && password_verify($_POST['contraseña'], $results['contrasenia'])) {
-      $_SESSION['user_id'] = $results['id'];
-      header("Location: /iniciar-sesion");
-    } else {
-      $message = 'Perdon, las credenciales no coinciden';
-    }
-  }
-
+  
 ?>
 
 <!DOCTYPE html>
